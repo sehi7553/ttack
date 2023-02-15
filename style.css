@@ -15,5 +15,7 @@ button:active{opacity: 0.9;}
 .chapter5{background: url('img/chapter1/12.jpg') no-repeat center center; background-size: cover;} 
 .list{gap: 20px; display: flex; flex-wrap: wrap; justify-content: center;}
 .list li{width: 130px; height: 130px; border-radius: 10px;}
-.list li a{display: flex; height: 100%; justify-content: center; align-items: center; backdrop-filter: brightness(0.5);}
+.list li a{display: flex; height: 100%; justify-content: center; align-items: center; position: relative;}
+.list li a::after{content: ""; opacity: 0.4; position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: #000;}
+.list li a span{z-index: 1;}
 .top_btn{margin:10px; display: flex; justify-content: space-between;}
