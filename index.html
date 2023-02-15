@@ -5,77 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="HandheldFriendly" content="true" />
-    <title>딱지는 패션왕</title>
-    <style>
-        *{color: #fff; text-align: center;}
-        html{-ms-content-zooming: none;}
-        body{background: #262626;}
-        button:active{opacity: 0.9;}
-    </style>
+    <title>딱지는 패션왕</title>    
+    <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     
-<body>
+<body style="background: #000;">
 
-<h1 style="margin-top: 50px;">패션왕 딱지!</h1>
-<p style="font-size: 12px;">우리 관종 딱지는 터치를 많이 할수록 옷을 벗습니다!</p>
-
-<h2 id="demo" style="font-size: 50px;"></h2>
-<p><button onclick="clickCounter()" type="button" style="width: 100%; border: none; background: none;"><img id="img" style="width: 100%;" src="12.jpg"></button></p>
-
-<button id="remove" style="background: none; border: none; margin-top: 60px;">첨부터 ㅋㅋ</button>
-<script>
-    
-clickCounter();
-clickCounter2();
-function clickCounter() {
-  if (localStorage.clickcount) {
-    localStorage.clickcount = Number(localStorage.clickcount)+1;    
-    clickCounter2();
-  } else {
-    localStorage.clickcount = 0;
-  }
-  document.getElementById("demo").innerHTML = localStorage.clickcount;
-}
-let remove = document.querySelector("#remove")
-remove.addEventListener("click", function (e){
-    localStorage.removeItem('clickcount');
-    localStorage.clickcount = 0;
-    document.getElementById("demo").innerHTML = localStorage.clickcount;
-    clickCounter2();
-})    
- function clickCounter2(){
-let target = localStorage.getItem('clickcount');
-let imgChn = document.getElementById('img');
-if(target >= 0){
-  imgChn.src = "12.jpg"
-}if(target >= 10){
-  imgChn.src = "11.jpg"
-}if(target >= 30){
-  imgChn.src = "10.jpg"
-}if(target >= 70){
-  imgChn.src = "9.jpg"
-}if(target >= 100){
-  imgChn.src = "8.jpg"
-}if(target >= 150){
-  imgChn.src = "7.jpg"
-}if(target >= 200){
-  imgChn.src = "6.jpg"
-}if(target >= 300){
-  imgChn.src = "5.jpg"
-}if(target >= 400){
-  imgChn.src = "4.jpg"
-}if(target >= 500){
-  imgChn.src = "3.jpg"
-}if(target >= 600){
-  imgChn.src = "2.jpg"
-}if(target >= 800){
-  imgChn.src = "1.jpg"
-}if(target >= 1000){
-  imgChn.src = "13.jpg"
-}
- }
-
-</script>
-
+  <div class="game">    
+    <h1>패션왕 딱지!</h1>
+    <ul class="list">
+      <li class="chapter1"><a href="chapter1.html">chapter1</a></li>
+      <li class="chapter2"><a href="chapter2.html">chapter2</a></li>
+      <li class="chapter3"><a href="chapter3.html">chapter3</a></li>
+      <li class="chapter4"><a href="chapter4.html">chapter4</a></li>
+      <li style="background: #fff;"><a href="#">준비중ㅠㅠ</a></li>
+      <li style="background: #fff;"><a href="#">준비중ㅠㅠ</a></li>
+    </ul>
+    <p style="font-size: 12px; margin-top: 20px;">🥪히즈컴퍼니</p>
+  </div>
+  <script>
+    if(localStorage.getItem('clickcount1') >= 1000){
+      document.querySelector('.chapter1').style = "background-image: url(img/chapter1/13.jpg);"
+    }
+    if(localStorage.getItem('clickcount2') >= 1000){
+      document.querySelector('.chapter2').style = "background-image: url(img/chapter2/1.jpg);"
+    }
+    if(localStorage.getItem('clickcount3') >= 1000){
+      document.querySelector('.chapter3').style = "background-image: url(img/chapter3/1.jpg);"
+    }
+    if(localStorage.getItem('clickcount4') >= 1000){
+      document.querySelector('.chapter4').style = "background-image: url(img/chapter4/1.jpg);"
+    }
+  </script>
 </body>
 </html>

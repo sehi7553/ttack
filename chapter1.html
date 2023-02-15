@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="HandheldFriendly" content="true" />
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <title>딱지는 패션왕</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    
+<body style="background: #000;">
+  <div class="top_btn"><button class="back"><a href="javascript:history.back();">👈메인으로 ㄱ</a></button><button id="remove">첨부터 ㅋㅋ</button></div>
+  
+  <div class="game">    
+    <h1>패션왕 딱지!</h1>
+    <p style="font-size: 12px;">우리 관종 딱지는 터치를 많이 할수록 옷을 벗습니다!</p>
+
+    <h2 id="demo" style="font-size: 50px;"></h2>
+    <p><button onclick="clickCounter()" type="button" style="width: 100%; border: none; background: none;"><img id="img" style="width: 100%;" src="img/chapter1/12.jpg"></button></p>
+
+    <p class="clear" style="display: none;">🎉축하드립니다! 홀딱 벗기셨네요</p>
+  </div>
+<script>
+    
+clickCounter();
+clickCounter2();
+function clickCounter() {
+  if (localStorage.clickcount1) {
+    localStorage.clickcount1 = Number(localStorage.clickcount1)+1;    
+    clickCounter2();
+  } else {
+    localStorage.clickcount1 = 0;
+  }
+  document.getElementById("demo").innerHTML = localStorage.clickcount1;
+}
+let remove = document.querySelector("#remove");
+let clear = document.querySelector('.clear');
+remove.addEventListener("click", function (e){
+    localStorage.removeItem('clickcount1');
+    localStorage.clickcount1 = 0;
+    document.getElementById("demo").innerHTML = localStorage.clickcount1;
+    document.body.style.background = "#000 "
+    clear.style.display = 'none'
+    clickCounter2();
+})    
+ function clickCounter2(){
+let target = localStorage.getItem('clickcount1');
+let imgChn = document.getElementById('img');
+let clear = document.querySelector('.clear');
+if(target >= 0){
+  imgChn.src = "img/chapter1/12.jpg"
+}if(target >= 10){
+  imgChn.src = "img/chapter1/11.jpg"
+}if(target >= 30){
+  imgChn.src = "img/chapter1/10.jpg"
+}if(target >= 70){
+  imgChn.src = "img/chapter1/9.jpg"
+}if(target >= 100){
+  imgChn.src = "img/chapter1/8.jpg"
+}if(target >= 150){
+  imgChn.src = "img/chapter1/7.jpg"
+}if(target >= 200){
+  imgChn.src = "img/chapter1/6.jpg"
+}if(target >= 300){
+  imgChn.src = "img/chapter1/5.jpg"
+}if(target >= 400){
+  imgChn.src = "img/chapter1/4.jpg"
+}if(target >= 500){
+  imgChn.src = "img/chapter1/3.jpg"
+}if(target >= 600){
+  imgChn.src = "img/chapter1/2.jpg"
+}if(target >= 800){
+  imgChn.src = "img/chapter1/1.jpg"
+}if(target >= 1000){
+  imgChn.src = "img/chapter1/13.jpg"
+  document.body.style.background = "#000 url('img/po.gif') no-repeat center top"
+  clear.style.display = 'block'
+}
+ }
+
+</script>
+
+</body>
+</html>
